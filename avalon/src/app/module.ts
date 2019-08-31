@@ -21,6 +21,11 @@ import Components from './views/components/components';
 import Layers from './views/layers/layers';
 import Behaviors from './views/behaviors/behaviors';
 
+// material
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu'
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -35,6 +40,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     Webview
   ],
   imports: [
+    // material
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    // end
     BrowserModule,
     FormsModule,
     HttpClientModule,
