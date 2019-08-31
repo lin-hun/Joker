@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './behaviors.html',
   styleUrls: ['./behaviors.scss']
 })
-export class Components implements OnInit {
+export default class Behaviors implements OnInit {
 
   constructor() { }
 

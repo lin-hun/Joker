@@ -17,7 +17,9 @@ import { Electron } from './providers/electron';
 import { Webview } from './directives/webview';
 
 import { App } from './app';
-import { Home } from './views/home/home';
+import Components from './views/components/components';
+import Layers from './views/layers/layers';
+import Behaviors from './views/behaviors/behaviors';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,7 +29,9 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     App,
-    Home,
+    Components,
+    Layers,
+    Behaviors,
     Webview
   ],
   imports: [
