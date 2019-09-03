@@ -1,8 +1,5 @@
-<div class="menu" color="primary">
-  <mat-toolbar color="accent">
-    <mat-toolbar-row *ngFor="let menu of menus">
-      <span>{{menu.name}}</span>
-    </mat-toolbar-row>
-  </mat-toolbar>
+<div class="container">
+  <Menu></Menu>
+  <router-outlet class="view"></router-outlet>
 </div>
-<router-outlet></router-outlet>
+

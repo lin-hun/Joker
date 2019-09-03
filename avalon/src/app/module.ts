@@ -3,25 +3,24 @@ import '../polyfills';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
 import { Router } from './router';
 
 // NG Translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 import { Electron } from './providers/electron';
-
 import { Webview } from './directives/webview';
 
+/* views */
 import { App } from './app';
 import Components from './views/components/components';
 import Layers from './views/layers/layers';
 import Behaviors from './views/behaviors/behaviors';
+/* components */
+import Menu from './components/menu/menu'
 
-// material
+/* material */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -32,9 +31,11 @@ import {MatToolbarModule} from "@angular/material";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
 @NgModule({
   declarations: [
+    /* components */
+    Menu,
+    /* view */
     App,
     Components,
     Layers,
