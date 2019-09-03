@@ -1,10 +1,7 @@
-<div class="menu">
-  <mat-toolbar>
-    <mat-toolbar-row>
-      <span>behaviors</span>
-    </mat-toolbar-row>
-    <mat-toolbar-row>
-      <span>Second Row</span>
+<div class="menu" color="primary">
+  <mat-toolbar color="accent">
+    <mat-toolbar-row *ngFor="let menu of menus">
+      <span>{{menu.name}}</span>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>

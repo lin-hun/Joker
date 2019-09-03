@@ -9,10 +9,16 @@ import { AppConfig } from '../environments/local';
   styleUrls: ['./app.scss']
 })
 export class App {
+  menus = [
+    {name:'Behaviors'},
+    {name:'Layers'},
+    {name:'Components'}
+  ]
   constructor(public electronService: Electron,
     private translate: TranslateService) {
     translate.setDefaultLang('en')
     if (electronService.isElectron()) {
+
     } else {
     }
   }
