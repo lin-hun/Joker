@@ -11,16 +11,9 @@ import { AppConfig } from '../environments/local';
 export class App {
   constructor(public electronService: Electron,
     private translate: TranslateService) {
-
-    translate.setDefaultLang('en');
-    // console.log('AppConfig', AppConfig);
-    // console.log(electronService,'electronService')
+    translate.setDefaultLang('en')
     if (electronService.isElectron()) {
-      // console.log('Mode electron');
-      // console.log('Electron ipcRenderer', electronService.ipcRenderer);
-      // console.log('NodeJS childProcess', electronService.childProcess);
     } else {
-      // console.log('Mode web');
     }
   }
 }
