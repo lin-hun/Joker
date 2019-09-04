@@ -10,7 +10,6 @@ export default class Behaviors implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('init')
   }
 
 }

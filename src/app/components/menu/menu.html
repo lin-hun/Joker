@@ -1,7 +1,7 @@
 <div class="menu" color="primary">
   <mat-toolbar color="accent">
-    <mat-toolbar-row *ngFor="let menu of menus">
-      <mat-icon class="icon" svgIcon={{menu.icon}} aria-hidden="false" aria-label="icon"></mat-icon>
+    <mat-toolbar-row *ngFor="let menu of data.menus">
+      <mat-icon (click)="methods.nav(menu)" class="icon" svgIcon={{menu.icon}} aria-hidden="false" aria-label="icon"></mat-icon>
     </mat-toolbar-row>
   </mat-toolbar>
 </div>

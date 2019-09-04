@@ -10,7 +10,6 @@ export default class Layers implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('init')
   }
 
 }

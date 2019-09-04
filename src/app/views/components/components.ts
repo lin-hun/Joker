@@ -10,7 +10,6 @@ export default class Components  {
   constructor() { }
 
   ngOnInit() {
-    console.log('init')
   }
 
 }

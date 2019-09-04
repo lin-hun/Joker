@@ -8,14 +8,18 @@ import Behaviors from './views/behaviors/behaviors';
 const routes: Routes = [
   {
     path: '',
+    component: Behaviors
+  },
+  {
+    path: 'components',
     component: Components
   },
   {
-    path: '',
+    path: 'layers',
     component: Layers
   },
   {
-    path: '',
+    path: 'behaviors',
     component: Behaviors
   },
 ];
