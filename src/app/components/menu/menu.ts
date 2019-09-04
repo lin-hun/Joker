@@ -13,8 +13,7 @@ export default class Menu implements OnInit{
       {name:'Behaviors',icon:'new',nav:'/behaviors'},
       {name:'Layers',icon:'layer',nav:'/layers'},
       {name:'Components',icon:'component',nav:'components'}
-    ],
-    router:Router
+    ]
   }
   methods = {
     nav:(menu)=>{
@@ -30,6 +29,5 @@ export default class Menu implements OnInit{
     })
   }
   ngOnInit() {
-    console.log('nginit')
   }
 }
