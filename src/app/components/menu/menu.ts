@@ -8,13 +8,16 @@ import {MatIconRegistry} from '@angular/material/icon';
 })
 export default class Menu{
   menus = [
-    {name:'Behaviors'},
-    {name:'Layers'},
-    {name:'Components'}
+    {name:'Behaviors',icon:'new'},
+    {name:'Layers',icon:'layer'},
+    {name:'Components',icon:'component'}
   ]
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-      'thumbs-up',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/examples/thumbup-icon.svg'));
+    let me = this
+    me.menus.forEach((v)=>{
+      iconRegistry.addSvgIcon(
+        v.icon,
+        sanitizer.bypassSecurityTrustResourceUrl(`assets/${v.icon}.svg`))
+    })
   }
 }
