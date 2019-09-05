@@ -29,5 +29,7 @@ export default class Menu implements OnInit{
     })
   }
   ngOnInit() {
+    let me = this
+    console.log(me.router.url,'router')
   }
 }
