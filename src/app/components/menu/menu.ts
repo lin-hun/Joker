@@ -18,7 +18,7 @@ export default class Menu implements OnInit{
   }
   methods = {
     nav:(menu)=>{
-      this.router.navigate([menu.nav]);
+      this.router.navigate([menu.nav])
     }
   }
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,private router:Router) {
