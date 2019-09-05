@@ -6,14 +6,17 @@ import Behaviors from '../views/behaviors/behaviors'
 export let config= [
   {
     path: 'components',
-    component: Components
+    component: Components,
+    icon:'component'
   },
   {
     path: 'layers',
-    component: Layers
+    component: Layers,
+    icon:'layer'
   },
   {
     path: 'behaviors',
-    component: Behaviors
+    component: Behaviors,
+    icon:'new',
   }
 ]

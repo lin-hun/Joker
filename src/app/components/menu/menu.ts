@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core'
 import {DomSanitizer} from '@angular/platform-browser'
 import {MatIconRegistry} from '@angular/material/icon'
 import {Router} from '@angular/router'
+import {menu} from "../../config/menu";
 
 @Component({
   selector: 'Menu',
@@ -10,11 +11,12 @@ import {Router} from '@angular/router'
 })
 export default class Menu implements OnInit{
   data = {
-    menus :[
-      {name:'Behaviors',icon:'new',nav:'/behaviors'},
-      {name:'Layers',icon:'layer',nav:'/layers'},
-      {name:'Components',icon:'component',nav:'components'}
-    ]
+    menus :menu.map(v=>{
+      return {
+        ...v,
+        nav:`/${v.path}`,
+      }
+    })
   }
   methods = {
     nav:(menu)=>{
