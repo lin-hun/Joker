@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import {DomSanitizer} from '@angular/platform-browser'
 import {MatIconRegistry} from '@angular/material/icon'
-import {Router,NavigationEnd} from '@angular/router'
+import {Router, NavigationEnd} from '@angular/router'
 import {menu} from "../../config/menu";
 
 @Component({
@@ -9,12 +9,13 @@ import {menu} from "../../config/menu";
   templateUrl: './menu.html',
   styleUrls: ['./menu.scss']
 })
-export default class Menu implements OnInit {
+export  class Menu implements OnInit {
   data = {
     menus: menu.map(v => {
       return {
         ...v,
         nav: `/${v.path}`,
+        active:false
       }
     })
   }
@@ -23,15 +24,22 @@ export default class Menu implements OnInit {
       this.router.navigate([menu.nav])
     }
   }
-  routerSubscribe(){
+
+  routerSubscribe() {
     let me = this
-    me.router.events.subscribe(e=>{
-      if(e instanceof NavigationEnd){
-        console.log(me.router.url)
+    me.router.events.subscribe(e => {
+      if (e instanceof NavigationEnd) {
+        let r = me.data.menus.filter(v => {
+          return v.nav === me.router.url
+        })
+        if (r.length) {
+          r[0].active = true
+        }
       }
     })
   }
-  registerSvg(){
+
+  registerSvg() {
     let me = this
     me.data.menus.forEach((v) => {
       me.iconRegistry.addSvgIcon(
@@ -39,11 +47,13 @@ export default class Menu implements OnInit {
         me.sanitizer.bypassSecurityTrustResourceUrl(`assets/${v.icon}.svg`))
     })
   }
-  constructor(private router: Router,private iconRegistry: MatIconRegistry,private sanitizer: DomSanitizer,) {
+
+  constructor(private router: Router, private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer,) {
     let me = this
     me.routerSubscribe()
     me.registerSvg()
   }
+
   ngOnInit() {
     let me = this
   }

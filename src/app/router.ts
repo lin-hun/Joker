@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core'
 import {RouterModule} from '@angular/router'
-import {routes} from "./config/router"
+import {conf} from "./config/router"
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(conf, {useHash: true})],
   exports: [RouterModule]
 })
 

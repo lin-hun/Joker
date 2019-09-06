@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core'
   templateUrl: './layers.html',
   styleUrls: ['./layers.scss']
 })
-export default class Layers implements OnInit {
+export class Layers implements OnInit {
 
   constructor() { }
 

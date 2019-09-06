@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core'
   templateUrl: './behaviors.html',
   styleUrls: ['./behaviors.scss']
 })
-export default class Behaviors implements OnInit {
-
+export class Behaviors implements OnInit {
+  test = [1,2,3,4]
   constructor() { }
 
   ngOnInit() {

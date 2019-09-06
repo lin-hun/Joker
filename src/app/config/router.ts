@@ -1,8 +1,10 @@
 import {config} from './config'
-let routes = Object.assign([],config)
-routes.unshift({
-  path: '',
-  pathMatch:'full',
-  redirectTo:'/behaviors'
-})
-export {routes}
+const conf = [
+  {
+    path: '',
+    pathMatch:'full',
+    redirectTo:'/behaviors'
+  },
+  ...config
+]
+export {conf}
